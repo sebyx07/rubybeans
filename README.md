@@ -9,9 +9,7 @@ class MyClass
 end
 #singleton classes
 MyClass.instance
-```
 
-```ruby
 class MyCache
   class << self
     def my_cached_item
@@ -21,10 +19,7 @@ class MyCache
 end
 # global accessable objects(cacheable)
 MyCache.my_cached_item
-```
 
-
-```ruby
 class MyService
   include Singleton
   def my_method; end
