@@ -16,4 +16,9 @@ RSpec.describe do
     expect(@container).to receive(:my_bean)
     @instance.my_bean
   end
+
+  it 'has my_bean and my_second_bean defined' do
+    expect(@instance.respond_to?(:my_bean)).to be true
+    expect(@instance.respond_to?(:my_second_bean)).to be true
+  end
 end

@@ -38,7 +38,7 @@ RSpec.describe RubyBeans::Stub do
     end
 
     it 'container has the bean' do
-      expect(@container.get_my_main_bean).to eq 333
+      expect(@container.get_my_main_bean).to eq 33
     end
   end
 end
