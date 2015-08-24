@@ -30,19 +30,19 @@ module RubyBeans
         self.class._load_container_instances
       end
 
-      if /^bean_/.match name
-        bean = RubyBeans::Cache.get bean
-        unless bean
-          bean = self.send("get_#{name}")
-          RubyBeans::Cache.put(name, bean)
-        end
-        bean
-      elsif /^get_bean/.match name
+      if name.start_with?('get_') && name.end_with?('_bean')
         result = nil
         dependent_containers.each do |container|
           result = container.send(name)
         end
         result
+      elsif name.end_with?('_bean')
+        bean = RubyBeans::Cache.get name
+        unless bean
+          bean = self.send("get_#{name}")
+          RubyBeans::Cache.put(name, bean)
+        end
+        bean
       else
         super
       end
