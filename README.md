@@ -76,7 +76,7 @@ RubyBeans.get_bean('first_bean') # => 3
 class MyClass
   extend RubyBeans::Injector
 
-  inject :first_bean, :second_MyContainerMyContainerbean
+  inject :first_bean, :second_bean
 end
 
 my_ins = MyClass.new
