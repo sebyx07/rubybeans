@@ -9,9 +9,7 @@ class MyClass
 end
 #singleton classes
 MyClass.instance
-```
 
-```ruby
 class MyCache
   class << self
     def my_cached_item
@@ -21,10 +19,7 @@ class MyCache
 end
 # global accessable objects(cacheable)
 MyCache.my_cached_item
-```
 
-
-```ruby
 class MyService
   include Singleton
   def my_method; end
@@ -81,7 +76,7 @@ RubyBeans.get_bean('first_bean') # => 3
 class MyClass
   extend RubyBeans::Injector
 
-  inject :first_bean, :second_MyContainerMyContainerbean
+  inject :first_bean, :second_bean
 end
 
 my_ins = MyClass.new
